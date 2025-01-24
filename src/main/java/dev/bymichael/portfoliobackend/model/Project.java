@@ -16,4 +16,5 @@ public class Project {
     private String title;
     private String description;
     private String link;
+    private String image;
 }
