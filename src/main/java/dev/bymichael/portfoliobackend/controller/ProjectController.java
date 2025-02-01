@@ -12,8 +12,12 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class ProjectController {
 
+    private final ProjectRepository projectRepository;
+
     @Autowired
-    private ProjectRepository projectRepository;
+    public ProjectController(ProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
+    }
 
     @GetMapping("/projects")
     public List<Project> getProjects() {

@@ -8,14 +8,29 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Setter
 @Getter
-@Document(collection = "projects")
+@Document(collection = "experience")
 @AllArgsConstructor
-public class Project {
+public class Experience {
+
     @Id
     private String id;
-    private String title;
+
+    private String year;
+
+    private String role;
+
+    private Company company;
+
     private String description;
-    private String link;
-    private String image;
+
     private String[] technologies;
+
+    @Setter
+    @Getter
+    public static class Company {
+        private String name;
+        private String link;
+
+    }
+
 }
